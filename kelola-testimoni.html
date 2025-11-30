@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Testimoni - Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root { --primary:#003366; --secondary:#006699; --accent:#ffd000; }
+body { display:flex; background:#f2f6fc; font-family:'Segoe UI',sans-serif; }
+
+/* Sidebar */
+.sidebar { width:260px; height:100vh; background:var(--primary); color:white; position:fixed; padding:25px 20px; }
+.sidebar h2 { font-size:25px; font-weight:800; margin-bottom:30px; }
+.sidebar ul { list-style:none; padding:0; }
+.sidebar ul li { margin:15px 0; padding:12px; border-radius:6px; cursor:pointer; }
+.sidebar ul li:hover, .sidebar ul li.active { background:var(--secondary); }
+.logout { margin-top:30px; background:var(--accent); color:#003366; font-weight:bold; border:none; padding:10px; border-radius:5px; width:100%; }
+
+/* Content */
+.content { margin-left:260px; padding:30px; width:100%; }
+.table td, .table th { vertical-align:middle; }
+.btn-add { background:var(--secondary); color:white; }
+.btn-add:hover { background:#00578c; }
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+        <li onclick="location.href='dashboard.html'"><i class="fa fa-gauge me-2"></i> Dashboard</li>
+        <li onclick="location.href='kelola-paket.html'"><i class="fa fa-wifi me-2"></i> Kelola Paket</li>
+        <li class="active"><i class="fa fa-comment me-2"></i> Kelola Testimoni</li>
+        <li onclick="location.href='kelola-pesan.html'"><i class="fa fa-envelope me-2"></i> Pesan Kontak</li>
+        <li onclick="location.href='kelola-peta.html'"><i class="fa fa-map me-2"></i> Kelola Peta</li>
+        <li onclick="location.href='pengaturan-web.html'"><i class="fa fa-gear me-2"></i> Pengaturan Website</li>
+    </ul>
+    <button class="logout" onclick="location.href='admin-login.html'">Logout</button>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+    <h1 class="fw-bold mb-4">Kelola Testimoni</h1>
+
+    <button class="btn btn-add mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah">
+        <i class="fa fa-plus me-1"></i> Tambah Testimoni
+    </button>
+
+    <table class="table table-bordered table-hover bg-white">
+        <thead class="table-secondary">
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Peran / Jabatan</th>
+                <th>Testimoni</th>
+                <th width="140px">Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="dataTesti"></tbody>
+    </table>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="modalTambah" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header"><h5 class="modal-title">Tambah Testimoni</h5></div>
+<div class="modal-body">
+    <input id="nama" class="form-control mb-2" placeholder="Nama">
+    <input id="jabatan" class="form-control mb-2" placeholder="Peran / Jabatan">
+    <textarea id="testi" rows="3" class="form-control" placeholder="Isi Testimoni"></textarea>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+    <button class="btn btn-success" onclick="simpanTesti()">Simpan</button>
+</div>
+</div></div></div>
+
+<script>
+let arrTesti = JSON.parse(localStorage.getItem("testimoni") || "[]");
+render();
+
+function render() {
+    let html = "";
+    arrTesti.forEach((t,i)=>{
+        html += `
+        <tr>
+            <td>${i+1}</td>
+            <td>${t.nama}</td>
+            <td>${t.jabatan}</td>
+            <td>${t.teks}</td>
+            <td>
+                <button class="btn btn-warning btn-sm me-1" onclick="edit(${i})"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger btn-sm" onclick="hapus(${i})"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>`;
+    });
+    document.getElementById("dataTesti").innerHTML = html;
+}
+
+function simpanTesti() {
+    arrTesti.push({ nama:nama.value, jabatan:jabatan.value, teks:testi.value });
+    localStorage.setItem("testimoni", JSON.stringify(arrTesti));
+    location.reload();
+}
+
+function hapus(i) {
+    if(confirm("Hapus testimoni ini?")) {
+        arrTesti.splice(i,1);
+        localStorage.setItem("testimoni", JSON.stringify(arrTesti));
+        render();
+    }
+}
+
+function edit(i) {
+    let t = arrTesti[i];
+    nama.value = t.nama; jabatan.value = t.jabatan; testi.value = t.teks;
+    arrTesti.splice(i,1);
+    localStorage.setItem("testimoni", JSON.stringify(arrTesti));
+    new bootstrap.Modal(document.getElementById('modalTambah')).show();
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

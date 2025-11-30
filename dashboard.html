@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Afnalink</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root { --primary: #003366; --secondary: #006699; --accent: #ffd000; }
+        body { display: flex; background: #f2f6fc; font-family: 'Segoe UI', sans-serif; }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            padding: 25px 20px;
+        }
+        .sidebar h2 { font-size: 25px; font-weight: 800; margin-bottom: 30px; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar ul li {
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .sidebar ul li:hover, .sidebar ul li.active {
+            background: var(--secondary);
+        }
+
+        /* Content */
+        .content {
+            margin-left: 260px;
+            padding: 30px;
+            width: 100%;
+        }
+        .card-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.1);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .stat-card {
+            background: var(--secondary);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+        .stat-card i { font-size: 40px; opacity: .8; }
+
+        /* Logout Button */
+        .logout {
+            margin-top: 30px;
+            background: var(--accent);
+            border: none;
+            padding: 10px 12px;
+            color: #003366;
+            font-weight: bold;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .logout:hover { background: #e7c300; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+       <ul>
+    <a href="dashboard.html"><li class="active"><i class="fa fa-gauge me-2"></i> Dashboard</li></a>
+    <a href="kelola-paket.html"><li><i class="fa fa-wifi me-2"></i> Kelola Paket Internet</li></a>
+    <a href="kelola-testimoni.html"><li><i class="fa fa-comment me-2"></i> Kelola Testimoni</li></a>
+    <a href="kelola-pesan.html"><li><i class="fa fa-envelope me-2"></i> Pesan & Form Kontak</li></a>
+    <a href="kelola-peta.html"><li><i class="fa fa-map me-2"></i> Kelola Peta & Jangkauan</li></a>
+    <a href="pengaturan-web.html"><li><i class="fa fa-gear me-2"></i> Pengaturan Website</li></a>
+    <li onclick="location.href='kelola-pelanggan.html'"><i class="fa fa-users me-2"></i> Pelanggan Aktif</li>
+
+</ul>
+
+
+        <button class="logout" onclick="logoutAdmin()">Logout</button>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 class="fw-bold">Dashboard Admin</h1>
+        <p>Selamat datang kembali, Admin 👋</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div>
+                   <h3 id="countPelanggan">0</h3>
+
+                    Pelanggan Aktif
+                </div>
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="stat-card">
+                <div>
+                    <h3>124</h3>
+                    Permintaan Kontak
+                </div>
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="stat-card">
+                <div>
+                    <h3>58</h3>
+                    Testimoni Masuk
+                </div>
+                <i class="fa fa-comment"></i>
+            </div>
+            <div class="stat-card">
+                <div>
+                    <h3>12</h3>
+                    Jangkauan Area Baru
+                </div>
+                <i class="fa fa-map-location-dot"></i>
+            </div>
+        </div>
+
+        <div class="card-box mt-4">
+            <h4 class="fw-bold mb-3">Aktivitas Terbaru</h4>
+            <ul>
+                <li>Tambah testimoni baru oleh pelanggan ✨</li>
+                <li>Paket Internet "Hifi 50 Mbps" diperbarui 📌</li>
+                <li>3 pesan baru dari halaman kontak 📬</li>
+                <li>Jangkauan area "Sidamulih" sudah aktif 🗺️</li>
+            </ul>
+        </div>
+
+    </div>
+
+<script>
+function logoutAdmin() {
+    if (confirm("Yakin ingin logout?")) {
+        window.location.href = "admin-login.html";
+    }
+    let pelanggan = JSON.parse(localStorage.getItem("pelanggan") || "[]");
+let aktif = pelanggan.filter(p => p.status === "Aktif").length;
+document.getElementById("countPelanggan").textContent = aktif;
+
+}
+</script>
+<script>
+const currentPage = location.pathname.split("/").pop();
+document.querySelectorAll(".sidebar a").forEach(a => {
+    if(a.getAttribute("href") === currentPage){
+        a.querySelector("li").classList.add("active");
+    }
+});
+</script>
+
+</body>
+</html>

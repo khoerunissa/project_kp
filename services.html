@@ -4,237 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layanan - Afnalink</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand logo" href="index.html">Afna<span>link</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto nav-links">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="services.html">Layanan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">Tentang Kami</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="testimonials.html">Testimoni</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Kontak</a>
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary ms-lg-3 d-none d-lg-block">Hubungi Kami</a>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-   <section id="services" class="services">
-        <div class="container">
-            <div class="section-title reveal">
-                <h2>Layanan Kami</h2>
-                <p>Kami menyediakan berbagai paket WiFi untuk memenuhi kebutuhan bisnis dan rumah Anda.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Paket Rumah</h3>
-                    <p>Internet cepat untuk keluarga dengan harga terjangkau. Cocok untuk streaming, game online, dan bekerja dari rumah.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Kecepatan hingga 100 Mbps</li>
-                        <li><i class="fas fa-check-circle"></i> Kuota Tanpa Batas</li>
-                        <li><i class="fas fa-check-circle"></i> Pemasangan Cepat</li>
-                        <li><i class="fas fa-check-circle"></i> Dukungan Teknis 24/7</li>
-                    </ul>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Paket Bisnis</h3>
-                    <p>Koneksi stabil untuk kebutuhan bisnis Anda dengan dukungan teknis prioritas dan uptime maksimal.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Bandwidth Dedicated</li>
-                        <li><i class="fas fa-check-circle"></i> SLA (Service Level Agreement)</li>
-                        <li><i class="fas fa-check-circle"></i> IP Publik Statis</li>
-                        <li><i class="fas fa-check-circle"></i> Prioritas Dukungan</li>
-                    </ul>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-city"></i>
-                    </div>
-                    <h3>Paket Enterprise</h3>
-                    <p>Solusi khusus untuk perusahaan besar dengan bandwidth tinggi, keamanan ekstra, dan SLA 99,9%.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Jaringan Skalabel</li>
-                        <li><i class="fas fa-check-circle"></i> Keamanan Tingkat Lanjut</li>
-                        <li><i class="fas fa-check-circle"></i> Manajemen Jaringan Penuh</li>
-                        <li><i class="fas fa-check-circle"></i> Konsultan IT Khusus</li>
-                    </ul>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>Hotspot WiFi</h3>
-                    <p>Jaringan WiFi publik untuk restoran, kafe, dan tempat umum dengan sistem billing fleksibel.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Halaman Login Kustom</li>
-                        <li><i class="fas fa-check-circle"></i> Manajemen Pengguna</li>
-                        <li><i class="fas fa-check-circle"></i> Laporan Penggunaan</li>
-                        <li><i class="fas fa-check-circle"></i> Integrasi Pembayaran</li>
-                    </ul>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Keamanan Jaringan</h3>
-                    <p>Solusi keamanan jaringan untuk melindungi data Anda dari ancaman cyber.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Firewall & VPN</li>
-                        <li><i class="fas fa-check-circle"></i> Deteksi Intrusi</li>
-                        <li><i class="fas fa-check-circle"></i> Proteksi DDoS</li>
-                        <li><i class="fas fa-check-circle"></i> Audit Keamanan</li>
-                    </ul>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Dukungan 24/7</h3>
-                    <p>Tim teknis kami siap membantu Anda kapan saja jika mengalami masalah koneksi.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Respon Cepat</li>
-                        <li><i class="fas fa-check-circle"></i> Teknisi Berpengalaman</li>
-                        <li><i class="fas fa-check-circle"></i> Bantuan Jarak Jauh</li>
-                        <li><i class="fas fa-check-circle"></i> Kunjungan Lokasi (jika diperlukan)</li>
-                    </ul>
-                </div>
-                <!-- New Web Hosting Service Card -->
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Web Hosting</h3>
-                    <p>Layanan hosting handal untuk website Anda dengan performa tinggi dan keamanan terjamin.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> SSD Storage Cepat</li>
-                        <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
-                        <li><i class="fas fa-check-circle"></i> Gratis SSL Certificate</li>
-                        <li><i class="fas fa-check-circle"></i> Dukungan Teknis 24/7</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand logo" href="index.html">Afna<span>link</span></a>
 
-    <footer aria-label="Footer Afnalink" class="index-footer-body">
-        <div class="index-footer">
-            <div class="footer-left">
-                <h2>JANGKAUAN LAYANAN KAMI</h2>
-                      <div class="map-container mb-3">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63338.31723155876!2d108.4156598565407!3d-7.628650405633863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef907bb02753%3A0x303f151e6f0ec41!2sPangandaran%20Regency%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1687450912345!5m2!1sid!2sid" 
-          width="100%" 
-          height="300" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-          onerror="this.style.display='none'; this.parentNode.innerHTML='<p class=\'text-red-400 mt-4\'>Peta tidak tersedia saat ini.</p>'"
-          aria-label="Peta Jangkauan Layanan kami di Pangandaran, Jawa Barat, Indonesia">
-        </iframe>
-      </div>
-      <p class="text-sm text-gray-300">Peta menunjukkan jangkauan layanan kami di daerah Pangandaran, Jawa Barat, Indonesia.</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+          
+           <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto nav-links">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        
+        <!-- Dropdown Layanan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Layanan
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="services.html">Layanan</a></li>
+            <li><a class="dropdown-item" href="Tawaran-paket.html">Paket internet dan Hosting</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimoni</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+    </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section id="services" class="services">
+    <div class="container">
+
+        <div class="section-title reveal">
+            <h2>Produk dan Jasa Kami</h2>
+            <p>Kami menyediakan berbagai paket WiFi untuk memenuhi kebutuhan bisnis dan rumah Anda.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- Service Card 1 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Internet Broadband</h3>
+                <p>Internet cepat untuk keluarga dengan harga terjangkau.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Kecepatan hingga 100 Mbps</li>
+                    <li><i class="fas fa-check-circle"></i> Kuota Tanpa Batas</li>
+                    <li><i class="fas fa-check-circle"></i> Pemasangan Cepat</li>
+                    <li><i class="fas fa-check-circle"></i> Dukungan Teknis 24/7</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Internet Dedicated</h3>
+                <p>Layanan internet eksklusif untuk bisnis Anda.</p>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-city"></i></div>
+                <h3>Colocation</h3>
+                <p>Fasilitas data center aman dan profesional.</p>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                <h3>Data Center</h3>
+                <p>Layanan data center berstandar internasional di Jakarta & Bandung.</p>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-lock"></i></div>
+                <h3>Sistem Integrator</h3>
+                <p>Layanan integrasi sistem untuk operasional bisnis Anda.</p>
+            </div>
+
+            <!-- Service Card 6 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
+                <h3>Dukungan 24/7</h3>
+                <p>Tim teknis siap membantu kapan saja.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Respon Cepat</li>
+                    <li><i class="fas fa-check-circle"></i> Teknisi Berpengalaman</li>
+                    <li><i class="fas fa-check-circle"></i> Bantuan Jarak Jauh</li>
+                    <li><i class="fas fa-check-circle"></i> Kunjungan Lokasi</li>
+                </ul>
+            </div>
+
+            <!-- Service Card 7 -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                <h3>Cloud Hosting</h3>
+                <p>Solusi hosting berbasis cloud yang fleksibel dan aman.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> SSD Storage</li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                    <li><i class="fas fa-check-circle"></i> Gratis SSL</li>
+                    <li><i class="fas fa-check-circle"></i> Support 24/7</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER LAYOUT -->
+<div class="footer-layout">
+
+    <!-- MAP -->
+    <div class="footer-map-container">
+        <div class="footer-map-content">
+            <h3 class="footer-map-title">Jangkauan Kami</h3>
+            <img src="image/peta.afnalink.png" class="map-image" alt="Peta Jangkauan Afnalink">
+            <p class="footer-map-desc">Jangkauan layanan kami di Pangandaran.</p>
+        </div>
     </div>
 
-            <!-- Middle column - Tautan Cepat & Media Sosial -->
-            <div class="footer-middle" aria-label="Tautan cepat dan media sosial">
-                <h4>INFORMASI</h4>
+    <!-- PACKET + ADDRESS + SOCIAL -->
+    <div class="footer-paket-container">
+
+        <h3 class="paket-title">Pilihan Paket Internet</h3>
+
+        <div class="paket-scroll">
+            <div class="paket-card">
+                <h4>HIFI 15 Mbps</h4>
+                <p class="price">Rp 180.000/Bulan</p>
                 <ul>
-                    <li tabindex="0">Tentang Afna</li>
-                    <li tabindex="0">Layanan</li>
-                    <li tabindex="0">Kontak</li>
-                    <li tabindex="0">Testimoni</li>
-                    <li tabindex="0">Afnalink Store</li>
+                    <li>Kecepatan 15 Mbps</li>
+                    <li>Gratis Router WiFi</li>
+                    <li>Ideal untuk 2–4 Perangkat</li>
                 </ul>
-                <div class="footer-media-social">
-                    <h4>MEDIA SOSIAL</h4>
-                    <div class="social-icons" role="list">
-                        <button aria-label="Instagram" title="Instagram" role="listitem" tabindex="0">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm4.25 3.5a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5Zm6.3-.95a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1Z"/></svg>
-                        </button>
-                        <button aria-label="YouTube" title="YouTube" role="listitem" tabindex="0">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 15l5.19-3L10 9v6zm12-2.83a3 3 0 0 0-2.11-2.11C18.11 9.75 12 9.75 12 9.75s-6.11 0-7.89.31A3 3 0 0 0 2 12a3 3 0 0 0 .11 1.83C3.89 14.25 10 14.25 10 14.25s6.11 0 7.89-.31a3 3 0 0 0 2.11-2.11Z"/></svg>
-                        </button>
-                        <button aria-label="Facebook" title="Facebook" role="listitem" tabindex="0">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 9h3v-3h-3c-1.66 0-3 1.34-3 3v2H7v3h3v7h3v-7h2.21l.79-3H13v-1.5c0-.28.22-.5.5-.5Z"/></svg>
-                        </button>
-                    </div>
-                </div>
+                <button class="btn-pilih">Pilih Paket</button>
             </div>
 
-            <!-- Right column - Informasi Kontak -->
-            <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="footer-right" aria-label="Informasi kontak">
-                <h3>AFNA HOME CARE</h3>
-                <div class="contact-item">
-                    <div class="icon-circle" aria-hidden="true">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-4.26 19.14L12 22l4.26-.86A10 10 0 0 0 12 2Zm0 15.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"/></svg>
-                    </div>
-                    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="contact-text">
-                        <strong>Afnalik – 1500-988<br/>Afnalink Home – 1500-933</strong>
-                        <small>HOTLINE 24 Jam</small>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon-circle" aria-hidden="true">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 8v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8m2.18-3.44a2.1 2.1 0 0 1 2.82 0 2.1 2.1 0 0 1 0 2.94 2.1 2.1 0 0 1-2.82 0 2.1 2.1 0 0 1 0-2.94zM7 10v4m4-4v4m4-4v4"/></svg>
-                    </div>
-                    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="contact-text">
-                        <strong>afna.link</strong>
-                        <small>Hubungi sales kami</small>
-                    </div>
-                </div>
+            <div class="paket-card">
+                <h4>HIFI 30 Mbps</h4>
+                <p class="price">Rp 245.000/Bulan</p>
+                <ul>
+                    <li>Kecepatan 30 Mbps</li>
+                    <li>Gratis Router WiFi</li>
+                    <li>Ideal untuk 5–7 Perangkat</li>
+                </ul>
+                <button class="btn-pilih">Pilih Paket</button>
+            </div>
 
-                <div class="contact-item">
-                    <div class="icon-circle" aria-hidden="true">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4a4 4 0 1 0-8 0c0 2.21 1.79 4 4 4z"/><path d="M6.5 18.6c.86 1.17 2.25 2.4 5.5 2.4s4.64-1.23 5.5-2.4"/></svg>
-                    </div>
-                    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="contact-text contact-address">
-                        Cikalong Rt.003 Rw 001<br/>
-                        Desa Sukaresik Kec. Sidamulih<br/>
-                        Pangandaran 46365 – Indonesia<br/>
-                        Tlp.<strong>+62-21-57998888</strong>
-                    </div>
-                </div>
+            <div class="paket-card">
+                <h4>HIFI 50 Mbps</h4>
+                <p class="price">Rp 275.000/Bulan</p>
+                <ul>
+                    <li>Kecepatan 50 Mbps</li>
+                    <li>Gratis Router WiFi</li>
+                    <li>Ideal untuk Keluarga</li>
+                </ul>
+                <button class="btn-pilih">Pilih Paket</button>
             </div>
         </div>
-    </footer>
-     <footer class="mt-auto">
-        <div class="container">
-            <p class="text-center text-white py-3">&copy; 2023 Afnalink. Semua hak dilindungi.</p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <script src="script.js"></script>
+
+        <!-- ADDRESS + SOCIAL -->
+        <div class="footer-contact-social">
+
+            <div class="contact-text contact-address">
+                Cikalong Rt.003 Rw 001 Desa Sukaresik Kec. Sidamulih<br>
+                Pangandaran 46365 – Indonesia<br>
+                Tlp. <b>+62-21-57998888</b>
+            </div>
+
+            <div class="footer-media-social">
+                <h4>MEDIA SOSIAL</h4>
+                <ul class="social-icons">
+                    <li><button><i class="fab fa-instagram"></i></button></li>
+                    <li><button><i class="fab fa-youtube"></i></button></li>
+                    <li><button><i class="fab fa-facebook"></i></button></li>
+                    <li><button><i class="fa-regular fa-user"></i></button></li>
+                </ul>
+            </div>
+
+        </div> <!-- END footer-contact-social -->
+
+    </div> <!-- END footer-paket-container -->
+
+</div> <!-- END footer-layout -->
+
+<footer class="mt-auto">
+    <div class="container">
+        <p class="text-center text-white py-3">&copy; 2025 Afnalink. Semua hak dilindungi.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
 </body>
 </html>

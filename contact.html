@@ -19,26 +19,26 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto nav-links">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">Layanan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">Tentang Kami</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="testimonials.html">Testimoni</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="contact.html">Kontak</a>
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-primary ms-lg-3 d-none d-lg-block">Hubungi Kami</a>
-                </div>
+               
+           <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto nav-links">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        
+        <!-- Dropdown Layanan -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Layanan
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="services.html">Layanan</a></li>
+            <li><a class="dropdown-item" href="Tawaran-paket.html">Paket internet dan Hosting</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimoni</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+    </ul>
             </nav>
         </div>
     </header>
@@ -135,105 +135,99 @@
         </section>
     </main>
 
-     <a href="https://wa.me/6282112340343" class="whatsapp-float" aria-label="Chat with SOJATEK on WhatsApp" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false" >
-            <path d="M20.52 3.5a11.8 11.8 0 00-16.7 0c-4.61 4.62-4.5 12.1.28 16.91L2 22l1.69-2.8a11.78 11.78 0 0016.83-1.22 11.85 11.85 0 00.01-16.49zM12 20a8 8 0 01-4.24-1.19l-.3-.18-2.5.74.75-2.44-.19-.3A8 8 0 1112 20zm3.25-4.94c-.19-.1-1.11-.54-1.28-.6-.16-.07-.27-.1-.39.1s-.45.6-.56.72c-.2.3-.39.34-.72.12a8.52 8.52 0 01-2.51-1.55 9.51 9.51 0 01-1.77-2.2c-.19-.33 0-.51.14-.66.12-.12.27-.3.41-.45a.48.48 0 00.19-.31c0-.11-.04-.2-.09-.29-.09-.1-.39-.93-.53-1.27-.14-.33-.28-.29-.39-.29-.1 0-.22 0-.34 0-.12 0-.32.1-.49.24s-.64.62-.64 1.51c0 .9.66 1.77.75 1.9.1.12 1.3 1.98 3.15 2.77.44.2.77.32 1.03.41.43.15.82.13 1.13.08.34-.05 1.11-.45 1.26-.89.15-.44.15-.82.1-.89-.05-.07-.18-.12-.38-.22z" />
-        </svg>
-    </a>
+    <a href="https://wa.me/6282112340343" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+   <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M380.9 97.1C339-1.6 214.6-29.9 135.4 43.1 74 100.7 60.3 188.2 96.6 258.1L80 336l81.2-15.8c67.7 35.5 149.3 26.5 203.2-27.3 60.4-61.5 60.4-161.4-.1-222.8zM224 372c-30.9 0-61.2-8.2-87.8-23.7l-6.3-3.7-48.2 9.4 9.8-47.1-4.1-6.6C64 232.2 70 154.9 119.3 107.2c62.5-59 165.2-52.4 219.4 14.2 43.3 54.8 39.8 134.2-8.1 183.2C301.6 352.4 263.4 372 224 372zm106.8-122.2c-5.8-2.9-34.3-16.9-39.6-18.8-5.3-2-9.1-2.9-12.9 2.9s-15 18.8-18.4 22.7c-3.4 3.8-6.8 4.2-12.6 1.4-34.2-17.1-56.5-30.5-75.1-68.7-5.7-10 5.7-9.3 16-30.8 1.8-3.8.9-7.2-.5-10.1s-12.9-31.2-17.7-42c-4.8-10.9-9.7-9.4-13.4-9.6s-7.2-.1-11-.1-10.1 1.4-15.4 7c-5.3 5.7-20.2 19.7-20.2 48.1s20.7 55.7 23.6 59.6c2.9 3.8 40.8 62.2 99.1 88.6 36.8 15.6 51.2 16.9 69.5 14.2 11.1-1.7 34.3-14 39.2-27.4 4.9-13.4 4.9-24.9 3.4-27.4-1.4-2.5-5.2-4.3-11-7.2z"/>
+</svg>
 
-    <footer aria-label="Footer Afnalink" class="index-footer-body">
-        <div class="index-footer">
-            <div class="footer-left">
-                <h2>JANGKAUAN LAYANAN KAMI</h2>
-                      <div class="map-container mb-3">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63338.31723155876!2d108.4156598565407!3d-7.628650405633863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef907bb02753%3A0x303f151e6f0ec41!2sPangandaran%20Regency%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1687450912345!5m2!1sid!2sid" 
-          width="100%" 
-          height="300" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-          onerror="this.style.display='none'; this.parentNode.innerHTML='<p class=\'text-red-400 mt-4\'>Peta tidak tersedia saat ini.</p>'"
-          aria-label="Peta Jangkauan Layanan kami di Pangandaran, Jawa Barat, Indonesia">
-        </iframe>
-      </div>
-      <p class="text-sm text-gray-300">Peta menunjukkan jangkauan layanan kami di daerah Pangandaran, Jawa Barat, Indonesia.</p>
+</a>
+
+ <div class="footer-layout">
+
+    <!-- PETA -->
+     
+   <div class="footer-map-container">
+    <div class="footer-map-content">
+        <h3 class="footer-map-title">Jangkauan Kami</h3>
+
+        <img src="image/peta.afnalink.png" alt="Peta Jangkauan Afnalink" class="map-image">
+
+        <p class="footer-map-desc">
+            Peta menunjukkan jangkauan layanan kami di daerah Pangandaran, Jawa Barat, Indonesia.
+        </p>
+    </div>
+</div>
+
+    
+
+    <!-- PAKET + ALAMAT + SOSMED -->
+    <div class="footer-paket-container">
+
+        <h3 class="paket-title">Pilihan Paket Internet</h3>
+        <div class="paket-scroll">
+            <div class="paket-card">
+                <h4>HIFI 15 Mbps</h4>
+                <p class="price">Rp 180.000/Bulan</p>
+                <ul>
+                    <li>Kecepatan 15 Mbps</li>
+                    <li>Gratis Router WiFi</li>
+                    <li>Ideal untuk 2–4 Perangkat</li>
+                </ul>
+                <button class="btn-pilih">Pilih Paket</button>
+            </div>
+
+            <div class="paket-card">
+                <h4>HIFI 30 Mbps</h4>
+                <p class="price">Rp 245.000/Bulan</p>
+                <ul>
+                    <li>Kecepatan 30 Mbps</li>
+                    <li>Gratis Router WiFi</li>
+                    <li>Ideal untuk 5–7 Perangkat</li>
+                </ul>
+                <button class="btn-pilih">Pilih Paket</button>
+            </div>
+
+            <div class="paket-card">
+                <h4>HIFI 50 Mbps</h4>
+                <p class="price">Rp 275.000/Bulan</p>
+                <ul>
+                    <li>Kecepatan 50 Mbps</li>
+                    <li>Gratis Router WiFi</li>
+                    <li>Ideal untuk Keluarga</li>
+                </ul>
+                <button class="btn-pilih">Pilih Paket</button>
+            </div>
+        </div>
+
+        <!-- ALAMAT -->
+       <div class="footer-contact-social">
+    <div class="contact-text contact-address">
+        Cikalong Rt.003 Rw 001 Desa Sukaresik Kec. Sidamulih<br>
+        Pangandaran 46365 – Indonesia<br>
+        Tlp. <strong>+62-21-57998888</strong>
     </div>
 
-            <!-- Middle column - Tautan Cepat & Media Sosial -->
-            <div class="footer-middle" aria-label="Tautan cepat dan media sosial">
-                <h4>INFORMASI</h4>
-                <ul>
-                    <li tabindex="0">Tentang Afna</li>
-                    <li tabindex="0">Layanan</li>
-                    <li tabindex="0">Kontak</li>
-                    <li tabindex="0">Testimoni</li>
-                    <li tabindex="0">Afnalink Store</li>
-                </ul>
-                <div class="footer-media-social">
-                    <h4>MEDIA SOSIAL</h4>
-                    <div class="social-icons" role="list">
-                        <button aria-label="Instagram" title="Instagram" role="listitem" tabindex="0">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm4.25 3.5a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5Zm6.3-.95a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1Z"/></svg>
-                        </button>
-                        <button aria-label="YouTube" title="YouTube" role="listitem" tabindex="0">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 15l5.19-3L10 9v6zm12-2.83a3 3 0 0 0-2.11-2.11C18.11 9.75 12 9.75 12 9.75s-6.11 0-7.89.31A3 3 0 0 0 2 12a3 3 0 0 0 .11 1.83C3.89 14.25 10 14.25 10 14.25s6.11 0 7.89-.31a3 3 0 0 0 2.11-2.11Z"/></svg>
-                        </button>
-                        <button aria-label="Facebook" title="Facebook" role="listitem" tabindex="0">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 9h3v-3h-3c-1.66 0-3 1.34-3 3v2H7v3h3v7h3v-7h2.21l.79-3H13v-1.5c0-.28.22-.5.5-.5Z"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right column - Informasi Kontak -->
-            <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="footer-right" aria-label="Informasi kontak">
-                <h3>AFNA HOME CARE</h3>
-                <div class="contact-item">
-                    <div class="icon-circle" aria-hidden="true">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-4.26 19.14L12 22l4.26-.86A10 10 0 0 0 12 2Zm0 15.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"/></svg>
-                    </div>
-                    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="contact-text">
-                        <strong>Afnalik – 1500-988<br/>Afnalink Home – 1500-933</strong>
-                        <small>HOTLINE 24 Jam</small>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon-circle" aria-hidden="true">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 8v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8m2.18-3.44a2.1 2.1 0 0 1 2.82 0 2.1 2.1 0 0 1 0 2.94 2.1 2.1 0 0 1-2.82 0 2.1 2.1 0 0 1 0-2.94zM7 10v4m4-4v4m4-4v4"/></svg>
-                    </div>
-                    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="contact-text">
-                        <strong>afna.link</strong>
-                        <small>Hubungi sales kami</small>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="icon-circle" aria-hidden="true">
-                        <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4a4 4 0 1 0-8 0c0 2.21 1.79 4 4 4z"/><path d="M6.5 18.6c.86 1.17 2.25 2.4 5.5 2.4s4.64-1.23 5.5-2.4"/></svg>
-                    </div>
-                    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="contact-text contact-address">
-                        Cikalong Rt.003 Rw 001<br/>
-                        Desa Sukaresik Kec. Sidamulih<br/>
-                        Pangandaran 46365 – Indonesia<br/>
-                        Tlp.<strong>+62-21-57998888</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-     <footer class="mt-auto">
-        <div class="container">
-            <p class="text-center text-white py-3">&copy; 2023 Afnalink. Semua hak dilindungi.</p>
-        </div>
-    </footer>
+    <div class="footer-media-social">
+        <h4>MEDIA SOSIAL</h4>
+        <ul class="social-icons">
+            <li><button title="Instagram"><i class="fab fa-instagram"></i></button></li>
+            <li><button title="YouTube"><i class="fab fa-youtube"></i></button></li>
+            <li><button title="Facebook"><i class="fab fa-facebook"></i></button></li>
+            <li><button title="Kontak"><i class="fa-regular fa-user"></i></button></li>
+        </ul>
+    </div>
+</div>
+<footer class="mt-auto">
+    <div class="container">
+        <p class="text-center text-white py-3">&copy; 2025 Afnalink. Semua hak dilindungi.</p>
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Pelanggan Aktif - Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{--primary:#003366;--secondary:#006699;--accent:#ffd000}
+body{display:flex;background:#f2f6fc;font-family:'Segoe UI',sans-serif}
+.sidebar{width:260px;background:var(--primary);color:white;height:100vh;position:fixed;padding:24px}
+.sidebar ul{list-style:none;padding:0}
+.sidebar ul li{padding:11px;border-radius:6px;margin-bottom:8px;cursor:pointer}
+.sidebar ul li:hover,.sidebar ul li.active{background:var(--secondary)}
+.content{margin-left:260px;padding:30px;width:100%}
+.table td,.table th{vertical-align:middle}
+.btn-add{background:var(--secondary);color:white}
+.btn-add:hover{background:#004f80}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2 class="fw-bold mb-4">Admin Panel</h2>
+  <ul>
+    <li onclick="location.href='dashboard.html'"><i class="fa fa-gauge me-2"></i> Dashboard</li>
+    <li onclick="location.href='kelola-paket.html'"><i class="fa fa-wifi me-2"></i> Kelola Paket</li>
+    <li onclick="location.href='kelola-testimoni.html'"><i class="fa fa-comment me-2"></i> Kelola Testimoni</li>
+    <li onclick="location.href='kelola-pesan.html'"><i class="fa fa-envelope me-2"></i> Pesan Kontak</li>
+    <li onclick="location.href='kelola-peta.html'"><i class="fa fa-map me-2"></i> Kelola Peta</li>
+    <li onclick="location.href='pengaturan-web.html'"><i class="fa fa-gear me-2"></i> Pengaturan Web</li>
+    <li class="active" onclick="location.href='kelola-pelanggan.html'"><i class="fa fa-users me-2"></i> Pelanggan Aktif</li>
+  </ul>
+  <button class="btn mt-3" style="background:var(--accent);color:#003366;width:100%;" onclick="location.href='admin-login.html'">Logout</button>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <h1 class="fw-bold mb-4">Kelola Pelanggan Aktif</h1>
+
+  <button class="btn btn-add mb-3" data-bs-toggle="modal" data-bs-target="#modalPelanggan">
+    <i class="fa fa-plus me-1"></i> Tambah Pelanggan
+  </button>
+
+  <input type="text" id="search" class="form-control mb-3" placeholder="Cari pelanggan berdasarkan nama...">
+
+  <table class="table table-bordered table-hover bg-white">
+    <thead class="table-secondary">
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>WA</th>
+        <th>Alamat</th>
+        <th>Paket</th>
+        <th>Status</th>
+        <th width="150">Aksi</th>
+      </tr>
+    </thead>
+    <tbody id="dataPelanggan"></tbody>
+  </table>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="modalPelanggan">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Data Pelanggan</h5></div>
+      <div class="modal-body row g-2">
+        <div class="col-md-6"><input id="nama" class="form-control" placeholder="Nama pelanggan"></div>
+        <div class="col-md-6"><input id="wa" class="form-control" placeholder="Nomor WhatsApp"></div>
+        <div class="col-md-12"><input id="alamat" class="form-control" placeholder="Alamat"></div>
+        <div class="col-md-6">
+          <select id="paket" class="form-control"></select>
+        </div>
+        <div class="col-md-6">
+          <select id="status" class="form-control">
+            <option value="Aktif">Aktif</option>
+            <option value="Nonaktif">Nonaktif</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button class="btn btn-success" onclick="simpanPelanggan()">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let pelanggan = JSON.parse(localStorage.getItem("pelanggan") || "[]");
+let paketList = JSON.parse(localStorage.getItem("paketInternet") || "[]");
+let editIndex = null;
+
+function renderPaketDropdown(){
+  paket.innerHTML = "";
+  paketList.forEach(p => paket.innerHTML += `<option>${p.nama}</option>`);
+}
+renderPaketDropdown();
+
+function render(){
+  let q = search.value.toLowerCase();
+  let rows = "";
+  pelanggan.filter(p => p.nama.toLowerCase().includes(q))
+  .forEach((p,i)=>{
+    rows += `
+      <tr>
+        <td>${i+1}</td>
+        <td>${p.nama}</td>
+        <td>${p.wa}</td>
+        <td>${p.alamat}</td>
+        <td>${p.paket}</td>
+        <td><span class="badge ${p.status=='Aktif'?'bg-success':'bg-secondary'}">${p.status}</span></td>
+        <td>
+          <button class="btn btn-warning btn-sm" onclick="edit(${i})"><i class="fa fa-edit"></i></button>
+          <button class="btn btn-danger btn-sm" onclick="hapus(${i})"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>`;
+  });
+  dataPelanggan.innerHTML = rows;
+}
+render();
+
+search.oninput = render;
+
+function simpanPelanggan(){
+  let p = {
+    nama:nama.value, wa:wa.value, alamat:alamat.value,
+    paket:paket.value, status:status.value
+  };
+  if(editIndex !== null) pelanggan[editIndex] = p;
+  else pelanggan.push(p);
+
+  localStorage.setItem("pelanggan", JSON.stringify(pelanggan));
+  editIndex = null;
+  render();
+  alert("Data pelanggan disimpan.");
+  location.reload();
+}
+
+function edit(i){
+  let p = pelanggan[i];
+  nama.value = p.nama; wa.value = p.wa; alamat.value = p.alamat;
+  paket.value = p.paket; status.value = p.status;
+  editIndex = i;
+  new bootstrap.Modal(modalPelanggan).show();
+}
+
+function hapus(i){
+  if(confirm("Hapus pelanggan ini?")){
+    pelanggan.splice(i,1);
+    localStorage.setItem("pelanggan", JSON.stringify(pelanggan));
+    render();
+  }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
